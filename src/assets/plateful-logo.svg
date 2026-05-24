@@ -1,0 +1,14 @@
+<svg width="680" height="160" viewBox="0 0 680 160" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="120" cy="80" r="56" fill="#fff8f0" stroke="#e0d5c8" stroke-width="1.5"/>
+  <circle cx="120" cy="80" r="40" fill="none" stroke="#e0d5c8" stroke-width="0.8"/>
+  <ellipse cx="120" cy="86" rx="24" ry="7" fill="#d4a06a"/>
+  <ellipse cx="120" cy="81" rx="17" ry="6" fill="#c8680a"/>
+  <ellipse cx="114" cy="77" rx="9" ry="4.5" fill="#3B6D11"/>
+  <ellipse cx="126" cy="76" rx="7" ry="3.5" fill="#a83c00"/>
+  <rect x="119" y="26" width="2.5" height="18" rx="1.2" fill="#c8680a" opacity="0.6"/>
+  <rect x="119" y="116" width="2.5" height="16" rx="1.2" fill="#c8680a" opacity="0.6"/>
+  <rect x="66" y="79" width="16" height="2.5" rx="1.2" fill="#c8680a" opacity="0.6"/>
+  <text x="198" y="68" font-family="Georgia, serif" font-size="52" font-weight="700" fill="#1a1208" letter-spacing="-1">Plate</text>
+  <text x="368" y="68" font-family="Georgia, serif" font-size="52" font-weight="700" fill="#c8680a" letter-spacing="-1">ful</text>
+  <text x="200" y="96" font-family="sans-serif" font-size="12" font-weight="400" fill="#9a8a78" letter-spacing="4">GOOD FOOD, ALWAYS</text>
+</svg>
