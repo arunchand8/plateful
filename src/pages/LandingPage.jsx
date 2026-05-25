@@ -3,11 +3,11 @@ import Footer from '../components/Footer'
 import Content from '../components/Content'
 import Items from '../components/Items'
 
-export default function LandingPage() {
+export default function LandingPage({ search }) {
   return (
     <>
       <Items />
-      <Content />
+      <Content search={search} />
       <Footer />    
     </>
   )

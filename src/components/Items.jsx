@@ -10,7 +10,7 @@ export default function Items() {
         after:left-0 after:w-0 after:h-0.5 after:bg-red-500 
         after:transition-all after:duration-500 hover:after:w-full"
       >
-        Home |
+        Home
       </Link>
       <Link
         to="/burger"
@@ -18,7 +18,7 @@ export default function Items() {
         after:left-0 after:w-0 after:h-0.5 after:bg-red-500 
         after:transition-all after:duration-500 hover:after:w-full"
       >
-        Burger |
+        Burger
       </Link>
       <Link
         to="/pizza"
@@ -26,7 +26,7 @@ export default function Items() {
         after:left-0 after:w-0 after:h-0.5 after:bg-red-500 
         after:transition-all after:duration-500 hover:after:w-full"
       >
-        Pizza |
+        Pizza
       </Link>
       <Link
         to="/pasta"

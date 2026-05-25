@@ -13,7 +13,7 @@ export default function App() {
     <BrowserRouter>
       <NavBar search={search} setSearch={setSearch} />
       <Routes>
-        <Route path='/' element={<LandingPage />} />
+        <Route path='/' element={<LandingPage search={search} />} />
         <Route path='/burger' element={<Burger search={search} />} />
         <Route path='/pizza' element={<Pizza search={search} />} />
         <Route path='/pasta' element={<Pasta search={search} />} />

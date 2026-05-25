@@ -23,17 +23,22 @@ export default function Pasta({ search }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function getProducts() {
+    async function getPasta() {
+      try {
       setLoading(true);
       const response = await fetch(
         "https://www.themealdb.com/api/json/v1/1/search.php?s=pasta",
       );
       const data = await response.json();
       setProducts(data.meals || []);
+    } catch (error) {
+      console.error("Error fetching pasta", error);      
+    } finally {
       setLoading(false);
-      console.log(data);
+      // console.log(data);
     }
-    getProducts();
+    }
+    getPasta();
   }, []);
 
   //Toggle Based on Each Card
@@ -66,9 +71,7 @@ export default function Pasta({ search }) {
                   product.strMeal.toLowerCase().includes(search.toLowerCase());
                 return (
                   <div key={product.idMeal} className="p-4">
-                    <div
-                      className={`p-6 rounded-lg flex flex-col ${isMatch ? "border-2 border-indigo-500 bg-indigo-50" : "bg-gray-100"}`}
-                    >
+                    <div className="p-6 rounded-lg flex flex-col bg-gray-100">
                       <img
                         className="h-48 w-full object-cover object-center overflow-hidden mb-6"
                         src={product.strMealThumb}

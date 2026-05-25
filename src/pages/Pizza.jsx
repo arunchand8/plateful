@@ -24,17 +24,22 @@ export default function Pizza({ search }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function getProducts() {
+    async function getPizza() {
+      try {
       setLoading(true);
       const response = await fetch(
         "https://www.themealdb.com/api/json/v1/1/search.php?s=pizza",
       );
       const data = await response.json();
       setProducts(data.meals || []);
-      console.log(data);
+    } catch (error) {
+      console.error("Error fetching Pizza", error); 
+    } finally {
+      // console.log(data);
       setLoading(false);
     }
-    getProducts();
+  }
+    getPizza();
   }, []);
 
   //Toggle Based on Each Card
@@ -67,9 +72,7 @@ export default function Pizza({ search }) {
                   product.strMeal.toLowerCase().includes(search.toLowerCase());
                 return (
                   <div key={product.idMeal} className="p-4">
-                    <div
-                      className={`p-6 rounded-lg flex flex-col ${isMatch ? "border-2 border-indigo-500 bg-indigo-50" : "bg-gray-100"}`}
-                    >
+                    <div className="p-6 rounded-lg flex flex-col bg-gray-100">
                       <img
                         className="h-48 w-full object-cover object-center overflow-hidden mb-6"
                         src={product.strMealThumb}

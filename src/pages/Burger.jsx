@@ -24,17 +24,22 @@ export default function Burger({ search }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function getProducts() {
+    async function getBurger() {
+      try {
       setLoading(true);
       const response = await fetch(
         "https://www.themealdb.com/api/json/v1/1/search.php?s=burger",
       );
       const data = await response.json();
       setProducts(data.meals || []);
+    } catch (error) {
+      console.error("Error fetching BUrger", error); 
+    } finally {
       setLoading(false);
-      console.log(data);
-    }
-    getProducts();
+      // console.log(data);
+    }       
+  }
+    getBurger();
   }, []);
   //Toggle Based on Each Card
   function toggleExpand(id) {
@@ -66,9 +71,7 @@ export default function Burger({ search }) {
                   product.strMeal.toLowerCase().includes(search.toLowerCase());
                 return (
                   <div key={product.idMeal} className="p-4">
-                    <div
-                      className={`p-6 rounded-lg flex flex-col ${isMatch ? "border-2 border-indigo-500 bg-indigo-50" : "bg-gray-100"}`}
-                    >
+                    <div className="p-6 rounded-lg flex flex-col bg-gray-100">
                       <img
                         className="h-48 w-full object-cover object-center overflow-hidden mb-6"
                         src={product.strMealThumb}
